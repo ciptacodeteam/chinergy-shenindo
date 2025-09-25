@@ -56,7 +56,7 @@ const ContactForm = () => {
           placeholder='Nama Lengkap'
           value={formData.name}
           onChange={handleChange}
-          className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-lg bg-gray-50 border-gray-200'
+          className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-base lg:text-lg bg-gray-50 border-gray-200'
           required
         />
         <input
@@ -72,7 +72,7 @@ const ContactForm = () => {
           placeholder='Nomor Telepon'
           value={formData.phone}
           onChange={handleChange}
-          className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-lg bg-gray-50 border-gray-200'
+          className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-base lg:text-lg bg-gray-50 border-gray-200'
           required
         />
         <input
@@ -81,7 +81,7 @@ const ContactForm = () => {
           placeholder='Subjek'
           value={formData.subject}
           onChange={handleChange}
-          className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-lg bg-gray-50 border-gray-200'
+          className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-base lg:text-lg bg-gray-50 border-gray-200'
           required
         />
         <textarea
@@ -90,13 +90,13 @@ const ContactForm = () => {
           rows={5}
           value={formData.message}
           onChange={handleChange}
-          className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 text-lg bg-gray-50 resize-none border-gray-200 focus:ring-secondary'
+          className='w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 text-base lg:text-lg bg-gray-50 resize-none border-gray-200 focus:ring-secondary'
           required
         />
         <button
           type='submit'
           disabled={loading}
-          className='w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-hover transition-colors duration-200 text-lg flex items-center justify-center'
+          className='w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-hover transition-colors duration-200 text-base lg:text-lg flex items-center justify-center'
         >
           {loading ? 'Mengirim...' : 'Kirim Pesan'}
         </button>
