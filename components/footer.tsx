@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+
+import logo from "@/public/img/logo.webp"
 
 export default function FooterSection() {
     return (
@@ -9,21 +12,31 @@ export default function FooterSection() {
 
                 {/* content */}
                 <div className="relative max-w-7xl mx-auto z-10">
-                    <div className="grid grid-cols-4 gap-20 mt-20 mb-20">
+                    <div className="grid grid-cols-4 mt-20 mb-20">
                         <div>
-                            <h1 className="font-bold text-2xl text-white mb-4">CV. KARYATAMA</h1>
-                            <p className="text-white text-sm mb-12">CV. Karyatama Agro Cemerlang menyediakan berbagai pelayanan seperti di bidang jasa pabrikasi, reparasi serta pengadaan spare parts untuk memenuhi kebutuhan mitra kami.</p>
+                            <div className="flex items-center mb-6">
+                                <Image
+                                    src={logo}
+                                    alt="logo"
+                                    className="w-15 me-4"
+                                />
+                                <div className="text-xl text-white font-bold leading-6">
+                                    <p>CHINERGI</p>
+                                    <p>SHENINDO</p>
+                                </div>
+                            </div>
+                            <p className="text-white text-sm mb-12">CV. Chinergi Shenindo menyediakan berbagai pelayanan seperti di bidang jasa pabrikasi, reparasi serta pengadaan spare parts untuk memenuhi kebutuhan mitra kami.</p>
 
                             <Link
                                 href={""}
                                 className="py-4 font-semibold px-6 bg-secondary text-white hover:!bg-white hover:text-secondary transition-colors duration-300"
                             >
-                                More About Us
+                                Tentang Kami
                             </Link>
                         </div>
                         <div className="flex flex-col justify-center items-center">
                             <div>
-                                <h1 className="font-bold text-white">Company Links</h1>
+                                <h1 className="font-bold text-white">Tautan Perusahaan</h1>
 
                                 <div className="h-1 w-16 bg-secondary mt-6 mb-6">
                                 </div>
@@ -31,27 +44,27 @@ export default function FooterSection() {
                                 <div className="space-y-3">
                                     <div className="flex items-center group cursor-pointer transition-all duration-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon text-gray-300 mt-0.5 lucide-chevron-right transition-all duration-300 group-hover:text-white group-hover:translate-x-1"><path d="m9 18 6-6-6-6" /></svg>
-                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Home</p>
+                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Beranda</p>
                                     </div>
 
                                     <div className="flex items-center group cursor-pointer transition-all duration-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon text-gray-300 mt-0.5 lucide-chevron-right transition-all duration-300 group-hover:text-white group-hover:translate-x-1"><path d="m9 18 6-6-6-6" /></svg>
-                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">About</p>
+                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Tentang Kami</p>
                                     </div>
 
                                     <div className="flex items-center group cursor-pointer transition-all duration-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon text-gray-300 mt-0.5 lucide-chevron-right transition-all duration-300 group-hover:text-white group-hover:translate-x-1"><path d="m9 18 6-6-6-6" /></svg>
-                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Services</p>
+                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Layanan</p>
                                     </div>
 
                                     <div className="flex items-center group cursor-pointer transition-all duration-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon text-gray-300 mt-0.5 lucide-chevron-right transition-all duration-300 group-hover:text-white group-hover:translate-x-1"><path d="m9 18 6-6-6-6" /></svg>
-                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Product</p>
+                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Produk</p>
                                     </div>
 
                                     <div className="flex items-center group cursor-pointer transition-all duration-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon text-gray-300 mt-0.5 lucide-chevron-right transition-all duration-300 group-hover:text-white group-hover:translate-x-1"><path d="m9 18 6-6-6-6" /></svg>
-                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Contact</p>
+                                        <p className="text-gray-300 font-semibold ms-2 transition-colors duration-300 group-hover:text-white">Kontak</p>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +108,7 @@ export default function FooterSection() {
 
                 <div className="relative max-w-7xl mx-auto mb-8 z-20">
                     <div className="flex text-white text-xs mt-10">
-                        ©{new Date().getFullYear()} Karyatama. Designed and Developed by
+                        ©{new Date().getFullYear()} CV. Chinergi Shenindo. Designed and Developed by
                         <Link
                             href="https://ciptacode.id/"
                             className="ms-1 hover:text-secondary transition-colors duration-300"

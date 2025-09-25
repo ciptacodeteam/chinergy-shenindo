@@ -4,9 +4,9 @@
   --font-poppins: 'Poppins', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
 
-  --color-primary: #02185a;
-  --color-secondary: #ff6119;
-  --color-third: #f8f9fa;
+  --color-primary: #024880;
+  --color-secondary: #abc42b;
+  --color-third: #fafafa;
 }
 
 .font-poppins {
@@ -66,4 +66,12 @@
 
 .hover\:bg-secondary:hover {
   background-color: var(--color-secondary);
+}
+
+.group:hover .group-hover\:bg-primary {
+  background-color: var(--color-primary);
+}
+
+.group:hover .group-hover\:text-primary {
+  color: var(--color-primary);
 }

@@ -3,6 +3,7 @@ import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/components/navigation";
 import FooterSection from "@/components/footer";
+import WhatsAppButton from "@/components/whatsapp";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <NavigationBar />
         {children}
+        <WhatsAppButton />
         <FooterSection />
       </body>
     </html>
