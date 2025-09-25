@@ -47,19 +47,19 @@ const AboutPage = () => {
           </div>
           {/* Text Section */}
           <div className='flex flex-col justify-center h-full'>
-            <div className='space-y-5 text-lg'>
-              <p className='text-gray-800 leading-relaxed text-pretty'>
+            <div className='space-y-5 '>
+              <p className='text-gray-800 leading-relaxed text-pretty text-lg'>
                 <span className='font-semibold text-primary'>
                   CV. Chinergi Shenindo
                 </span>{' '}
                 adalah perusahaan yang berdedikasi menyediakan layanan terbaik
                 di bidang{' '}
-                <span className='font-semibold'>
+                <span className='font-medium'>
                   jasa pabrikasi, reparasi, dan pengadaan spare parts alat berat
                 </span>
                 . Berbekal pengalaman bertahun-tahun, kami membangun reputasi
                 sebagai mitra solusi yang{' '}
-                <span className='font-semibold'>handal dan efisien</span> untuk
+                <span className='font-medium'>handal dan efisien</span> untuk
                 berbagai industri.
               </p>
               <ul className='space-y-4'>
@@ -67,7 +67,7 @@ const AboutPage = () => {
                   <div>
                     <IconCertificate className='text-secondary' size={28} />
                   </div>
-                  <span className='text-lg text-gray-800'>
+                  <span className='text-gray-800'>
                     <span className='font-semibold text-primary'>
                       Profesional & Berpengalaman
                     </span>{' '}
@@ -79,7 +79,7 @@ const AboutPage = () => {
                   <div>
                     <IconTools className='text-secondary' size={28} />
                   </div>
-                  <span className='text-lg text-gray-800'>
+                  <span className='text-gray-800'>
                     <span className='font-semibold text-primary'>
                       Layanan Berkualitas
                     </span>{' '}
@@ -90,7 +90,7 @@ const AboutPage = () => {
                   <div>
                     <IconGlobe className='text-secondary' size={28} />
                   </div>
-                  <span className='text-lg text-gray-800'>
+                  <span className='text-gray-800'>
                     <span className='font-semibold text-primary'>
                       Jangkauan Luas
                     </span>{' '}
