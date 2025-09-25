@@ -1,48 +1,32 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --font-poppins: 'Poppins', sans-serif;
-  --font-roboto: 'Roboto', sans-serif;
-
+@theme inline {
   --color-primary: #024880;
+  --color-primary-hover: #023a6b;
   --color-secondary: #abc42b;
   --color-third: #fafafa;
+
+  --color-background: #ffffff;
+  --color-text: #333333;
+
+  --font-popins: 'Poppins', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
 }
 
-.font-poppins {
-  font-family: var(--font-poppins);
-}
-
-.font-roboto {
-  font-family: var(--font-roboto);
-}
-
-.bg-primary {
-  background-color: var(--color-primary);
-}
-
-.bg-secondary {
-  background-color: var(--color-secondary);
-}
-
-.bg-third {
-  background-color: var(--color-third);
-}
-
-.text-primary {
-  color: var(--color-primary);
-}
-
-.text-secondary {
-  color: var(--color-secondary);
+@layer base {
+  button {
+    @apply transition duration-300 ease-in-out cursor-pointer;
+  }
 }
 
 .stripes-bg {
-  background-image: repeating-linear-gradient(45deg,
-      rgba(0, 0, 0, 0.08) 0px,
-      rgba(0, 0, 0, 0.08) 2px,
-      transparent 2px,
-      transparent 8px);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 2px,
+    transparent 2px,
+    transparent 8px
+  );
 
   background-size: 192 192;
   background-repeat: repeat;

@@ -17,9 +17,13 @@ const SectionTitle = ({ title, description, img }: Props) => {
         className='opacity-20'
       />
       <div className='relative z-10 text-center'>
-        <h1 className='text-5xl font-bold text-white text-balance'>{title}</h1>
+        <h1 className='text-5xl font-bold text-white text-balance font-roboto'>
+          {title}
+        </h1>
         {description && (
-          <p className='text-lg text-white mt-4 text-pretty'>{description}</p>
+          <p className='text-lg text-white mt-4 text-pretty font-roboto'>
+            {description}
+          </p>
         )}
       </div>
     </section>
