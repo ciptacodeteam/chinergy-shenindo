@@ -10,13 +10,13 @@ import { getEmailMessageUrl, getWhatsappMessageUrl } from '@/lib/utils';
 export default function FooterSection() {
   return (
     <>
-      <section className='relative bg-primary overflow-hidden'>
+      <footer className='relative bg-primary overflow-hidden'>
         {/* background image transparan */}
         <div className="absolute inset-0 bg-[url('/img/map_img.webp')] bg-cover bg-no-repeat opacity-15"></div>
 
         {/* content */}
-        <div className='relative max-w-7xl mx-auto z-10'>
-          <div className='grid grid-cols-4 mt-20 mb-20'>
+        <main className='relative max-w-7xl mx-auto z-10'>
+          <div className='grid grid-cols-1 mt-20 mb-20 md:grid-cols-2 lg:grid-cols-4 gap-10 px-6 lg:px-0'>
             <div>
               <div className='flex items-center mb-6'>
                 <Image src={logo} alt='logo' className='w-15 me-4' />
@@ -39,7 +39,7 @@ export default function FooterSection() {
                 Tentang Kami
               </Link>
             </div>
-            <div className='flex flex-col justify-center items-center'>
+            <div className='flex flex-col justify-center lg:items-center'>
               <div>
                 <h1 className='font-bold text-white'>Tautan Perusahaan</h1>
 
@@ -209,10 +209,10 @@ export default function FooterSection() {
               </div>
             </div>
           </div>
-        </div>
+        </main>
 
         <Copyright />
-      </section>
+      </footer>
     </>
   );
 }
