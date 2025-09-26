@@ -1,16 +1,18 @@
-"use client";
+'use client';
 
-import { FloatingWhatsApp } from "react-floating-whatsapp";
+import { PHONE_NUMBER } from '@/lib/constants';
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
 
 export default function WhatsAppButton() {
   return (
     <FloatingWhatsApp
-      phoneNumber="628123456789" // ganti dengan nomor WA kamu
-      accountName="CV. Chinergi Shenindo"
-      avatar="/logo.png" // opsional: ganti logo brand kamu
-      chatMessage="Halo 👋, ada yang bisa kami bantu?"
-      statusMessage="Kami akan balas dalam beberapa menit kedepan"
-      placeholder="Ketik pesan..."
+      phoneNumber={PHONE_NUMBER.replace('+', '')}
+      accountName='CV. Chinergi Shenindo'
+      avatar='/img/logo.webp' // opsional: ganti logo brand kamu
+      chatMessage='Halo 👋, ada yang bisa kami bantu?'
+      statusMessage='24 Jam Layanan'
+      placeholder='Ketik pesan...'
+      chatboxHeight={400}
       allowEsc
       allowClickAway
       notification
