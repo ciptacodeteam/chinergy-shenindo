@@ -21,7 +21,7 @@ const SectionTitle = ({ title, description, img }: Props) => {
           {title}
         </h1>
         {description && (
-          <p className='lg:text-lg text-white mt-4 text-pretty mx-4 lg:mx-0 text-sm'>
+          <p className='lg:text-base text-white mt-4 text-pretty mx-4 lg:mx-0 text-sm'>
             {description}
           </p>
         )}

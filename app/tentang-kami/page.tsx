@@ -18,20 +18,11 @@ const AboutPage = () => {
       />
 
       <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16'>
-        <div className='text-center mb-16'>
-          <h2 className='text-3xl font-bold text-primary mb-4 text-balance'>
-            Mengenal CV. Chinergi Shenindo
-          </h2>
-          <p className='text-lg text-gray-600 max-w-3xl mx-auto text-pretty'>
-            Mitra terpercaya Anda dalam solusi alat berat, berkomitmen pada
-            kualitas dan inovasi.
-          </p>
-        </div>
 
         {/* Who We Are Section */}
-        <div className='grid md:grid-cols-2 gap-12 items-center mb-20'>
+        <div className='grid md:grid-cols-2 gap-16 items-center mb-20'>
           {/* Image Section */}
-          <div className='relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl group'>
+          <div className='relative w-full h-96 overflow-hidden group'>
             <Image
               src='/img/img1.webp'
               alt='Heavy equipment repair'
@@ -122,7 +113,7 @@ const AboutPage = () => {
           ].map((item) => (
             <div
               key={item.title}
-              className='p-4 py-8 border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 bg-third'
+              className='p-4 py-8 border border-gray-200 transition-shadow duration-300 bg-third'
             >
               <h4 className='text-2xl font-semibold text-primary mb-4'>
                 {item.title}
@@ -181,7 +172,7 @@ const AboutPage = () => {
                         : 'md:justify-start md:odd:justify-end'
                     }`}
                   >
-                    <div className='w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg'>
+                    <div className='w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white font-bold text-xl'>
                       {idx + 1}
                     </div>
                   </div>
@@ -241,7 +232,7 @@ const AboutPage = () => {
             ].map((item) => (
               <li
                 key={item.title}
-                className='flex flex-col items-center p-4 py-8 bg-third rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group'
+                className='flex flex-col items-center p-4 py-8 bg-third rounded-xl transition-all duration-300 group'
               >
                 {<item.icon size={42} className='text-primary mb-4' />}
                 <h5 className='text-xl font-semibold text-primary mb-2'>
@@ -257,7 +248,7 @@ const AboutPage = () => {
       </section>
 
       <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-        <div className='bg-primary rounded-2xl p-8 py-12 flex flex-col items-center text-center shadow-xl'>
+        <div className='bg-primary rounded-lg p-8 py-12 flex flex-col items-center text-center'>
           <h3 className='text-3xl font-bold text-white mb-4'>
             Siap Bermitra dengan Kami?
           </h3>
@@ -268,7 +259,7 @@ const AboutPage = () => {
           <Link
             prefetch
             href='/kontak'
-            className='bg-secondary text-white font-semibold px-8 py-3 rounded-lg shadow hover:bg-secondary/80 transition-colors duration-200 flex items-center justify-center'
+            className='bg-secondary text-white font-semibold px-8 py-3 rounded-lg hover:bg-secondary/80 transition-colors duration-200 flex items-center justify-center'
           >
             <IconPhone className='inline mr-2' size={20} />
             Hubungi Kami

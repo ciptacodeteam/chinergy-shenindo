@@ -35,7 +35,7 @@ const contactData = [
 
 const ContactDetailCard = () => {
   return (
-    <div className='bg-third p-10 rounded-xl shadow-lg h-fit flex flex-col justify-between'>
+    <div className='bg-third p-10 rounded-xl h-fit flex flex-col justify-between'>
       <div>
         <h3 className='text-2xl font-semibold text-primary mb-8 text-balance'>
           Informasi Kontak

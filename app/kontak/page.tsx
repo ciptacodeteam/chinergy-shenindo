@@ -16,7 +16,7 @@ const ContactPage = () => {
             <h2 className='text-3xl font-bold text-primary mb-4 text-balance'>
               Mari Berdiskusi
             </h2>
-            <p className='text-lg text-gray-600 max-w-3xl mx-auto text-pretty'>
+            <p className='text-base text-gray-600 max-w-3xl mx-auto text-pretty'>
               Kami selalu terbuka untuk pertanyaan, kolaborasi, dan peluang
               baru. Jangan ragu untuk menghubungi kami.
             </p>

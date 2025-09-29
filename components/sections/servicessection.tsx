@@ -1,16 +1,28 @@
+import Link from "next/link";
+
 export default function ServicesSection() {
     return (
         <section>
-            <div className="max-w-7xl mx-auto py-32">
-                <div>
-                    <h2 className="text-7xl font-extrabold text-primary">
-                        LAYANAN KAMI
-                    </h2>
-                    <p className="text-gray-500 w-1/3 mt-3">Layanan Komprehensif dan Profesional untuk Menunjang Operasional dan Kebutuhan Industri.</p>
+            <div className="max-w-7xl mx-auto pt-32 pb-40">
+                <div className="flex justify-between items-center">
+                    <div>
+                        <div>
+                            <h2 className="text-6xl font-extrabold text-primary">
+                                Layanan Kami
+                            </h2>
+                            <p className="text-gray-500 w-2/3 mt-3">Layanan Komprehensif dan Profesional untuk Menunjang Operasional dan Kebutuhan Industri.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <Link href="">
+                            <button className='mt-8 py-4 px-6 bg-secondary text-white font-semibold hover:!bg-secondary/90 transition-colors duration-300'>
+                                Pelajari Lebih Lanjut
+                            </button>
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-3 mt-12 gap-8 items-stretch">
-
                     <div className="group h-full">
                         <div className="border h-full border-gray-200 transition-colors duration-300 group-hover:bg-primary flex flex-col justify-between">
                             <div className="px-10 py-10">

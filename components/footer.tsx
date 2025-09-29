@@ -17,7 +17,7 @@ export default function FooterSection() {
         {/* content */}
         <main className='relative max-w-7xl mx-auto z-10'>
           <div className='grid grid-cols-1 mt-20 mb-20 md:grid-cols-2 lg:grid-cols-4 gap-10 px-6 lg:px-0'>
-            <div>
+            <div className=''>
               <div className='flex items-center mb-6'>
                 <Image src={logo} alt='logo' className='w-15 me-4' />
                 <div className='text-xl text-white font-bold leading-6'>
@@ -27,8 +27,7 @@ export default function FooterSection() {
               </div>
               <p className='text-white text-sm mb-12'>
                 CV. Chinergi Shenindo menyediakan berbagai pelayanan seperti di
-                bidang jasa pabrikasi, reparasi serta pengadaan spare parts
-                untuk memenuhi kebutuhan mitra kami.
+                bidang jasa pabrikasi, reparasi serta pengadaan spare parts.
               </p>
 
               <Link

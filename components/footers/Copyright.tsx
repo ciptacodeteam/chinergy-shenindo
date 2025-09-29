@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Copyright = () => {
   return (
     <div className='relative max-w-7xl mx-auto mb-8 z-20 px-4 lg:px-0 flex justify-center'>
-      <div className='flex text-white text-xs mt-10'>
+      <div className='flex text-white text-xs mt-4'>
         ©{new Date().getFullYear()} CV. Chinergi Shenindo. Designed and
         Developed by
         <Link

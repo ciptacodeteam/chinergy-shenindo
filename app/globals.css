@@ -59,3 +59,8 @@
 .group:hover .group-hover\:text-primary {
   color: var(--color-primary);
 }
+
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #e2e2e2;
+}

@@ -25,9 +25,10 @@ export default function NavigationBar() {
 
   const menus = [
     { name: 'Beranda', href: '/' },
-    { name: 'Tentang Kami', href: '/tentang-kami' },
-    { name: 'Layanan', href: '/layanan' },
-    { name: 'Produk', href: '/produk' },
+    { name: 'Pabrikasi', href: '/pabrikasi' },
+    { name: 'Reparasi', href: '/reparasi' },
+    { name: 'Spare Parts', href: '/sparepart' },
+    { name: 'Tentang Kami', href: '/tentang-kami'},
     { name: 'Kontak', href: '/kontak' },
   ];
 
@@ -61,7 +62,7 @@ export default function NavigationBar() {
                     <IconClock className='size-5 text-white me-2' />
                   </div>
                   <p className='text-white text-sm'>
-                    Senin - Sabtu: 08.00 - 17.30 WIB, Minggu: Tutup
+                    Senin - Sabtu: 08.00 - 17.30 WIB
                   </p>
                 </div>
               </div>
@@ -124,7 +125,7 @@ export default function NavigationBar() {
           </div>
 
           <nav className='hidden lg:flex lg:flex-1 bg-white'>
-            <ul className='grid grid-cols-5 w-full border-gray-200 divide-x border-y h-full text-center font-medium'>
+            <ul className='grid grid-cols-6 w-full border-gray-200 divide-x border-y h-full text-center font-medium'>
               {menus.map((menu, idx) => (
                 <li
                   key={idx}

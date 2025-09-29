@@ -47,7 +47,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='p-8 rounded-2xl shadow-xl bg-white border border-gray-100'>
+    <div className='p-8 rounded-2xl bg-white border border-gray-100'>
       <h3 className='text-2xl font-bold text-primary mb-6'>Hubungi Kami</h3>
       <form onSubmit={handleSubmit} className='space-y-5'>
         <input
