@@ -14,7 +14,7 @@ export default function PartnerSection() {
   ];
 
   return (
-    <section className='bg-primary py-12 md:py-20 mb-20'>
+    <section className='bg-primary py-12 md:py-20 mb-20 before:bg-[url("/img/construction-bg.jpg")] before:bg-cover before:bg-no-repeat before:bg-center before:contents-[""] relative before:absolute before:inset-0 before:opacity-10'>
       <div className='px-4 md:px-0 max-w-7xl mx-auto'>
         <div className='flex flex-col items-center'>
           <h1 className='text-3xl md:text-6xl font-bold text-white text-center'>

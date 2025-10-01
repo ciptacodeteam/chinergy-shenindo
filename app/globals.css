@@ -19,6 +19,12 @@
   }
 }
 
+@layer components {
+  .btn-primary {
+    @apply py-3 px-5 md:py-4 md:px-6 bg-secondary text-white font-semibold hover:!bg-secondary/90 transition-all duration-300;
+  }
+}
+
 .stripes-bg {
   background-image: repeating-linear-gradient(
     45deg,

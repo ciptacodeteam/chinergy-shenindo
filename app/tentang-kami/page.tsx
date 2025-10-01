@@ -9,6 +9,25 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
+const companyBenefits = [
+  {
+    icon: IconCertificate,
+    title: 'Profesional & Berpengalaman',
+    description:
+      'Di bidang pabrikasi, reparasi, dan pengadaan spare parts alat berat.',
+  },
+  {
+    icon: IconTools,
+    title: 'Layanan Berkualitas',
+    description: 'Dengan teknisi ahli dan produk teruji.',
+  },
+  {
+    icon: IconCertificate,
+    title: 'Jangkauan Luas',
+    description: 'Dengan kemitraan strategis di seluruh Indonesia.',
+  },
+];
+
 const AboutPage = () => {
   return (
     <main>
@@ -18,11 +37,54 @@ const AboutPage = () => {
       />
 
       <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16'>
-
         {/* Who We Are Section */}
         <div className='grid md:grid-cols-2 gap-16 items-center mb-20'>
+          {/* Text Section */}
+          <div className='flex flex-col justify-center h-full'>
+            <div className='space-y-5 '>
+              <header>
+                <h2 className='text-2xl font-extrabold font-popins text-primary text-balance'>
+                  Profil Perusahaan
+                </h2>
+                <p className='text-gray-800 leading-relaxed text-pretty italic'>
+                  CV. Chinergi Shenindo
+                </p>
+              </header>
+              <p className='text-gray-800 leading-relaxed text-pretty text-sm mb-8'>
+                CV. Chinergi Shenindo adalah perusahaan yang berdedikasi
+                menyediakan layanan terbaik di bidang jasa pabrikasi, reparasi,
+                dan pengadaan spare parts alat berat . Berbekal pengalaman
+                bertahun-tahun, kami membangun reputasi sebagai mitra solusi
+                yang handal dan efisien untuk berbagai industri.
+              </p>
+              <ul className='space-y-4'>
+                {companyBenefits.map((benefit) => (
+                  <li
+                    key={benefit.title}
+                    className='flex items-start gap-3 border-b pb-4 border-gray-200 last:border-0'
+                  >
+                    <div className='bg-primary p-2 rounded-full flex items-center justify-center'>
+                      <benefit.icon
+                        className='text-white'
+                        size={24}
+                        strokeWidth={1}
+                      />
+                    </div>
+                    <div>
+                      <p className='font-semibold text-primary text-sm'>
+                        {benefit.title}
+                      </p>
+                      <p className='text-gray-800 text-sm leading-relaxed italic'>
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           {/* Image Section */}
-          <div className='relative w-full h-96 overflow-hidden group'>
+          <div className='relative w-full h-full overflow-hidden group'>
             <Image
               src='/img/img1.webp'
               alt='Heavy equipment repair'
@@ -34,61 +96,6 @@ const AboutPage = () => {
               <span className='text-white text-3xl font-bold tracking-wide text-center px-6 drop-shadow-lg'>
                 Keahlian Kami
               </span>
-            </div>
-          </div>
-          {/* Text Section */}
-          <div className='flex flex-col justify-center h-full'>
-            <div className='space-y-5 '>
-              <p className='text-gray-800 leading-relaxed text-pretty text-lg'>
-                <span className='font-semibold text-primary'>
-                  CV. Chinergi Shenindo
-                </span>{' '}
-                adalah perusahaan yang berdedikasi menyediakan layanan terbaik
-                di bidang{' '}
-                <span className='font-medium'>
-                  jasa pabrikasi, reparasi, dan pengadaan spare parts alat berat
-                </span>
-                . Berbekal pengalaman bertahun-tahun, kami membangun reputasi
-                sebagai mitra solusi yang{' '}
-                <span className='font-medium'>handal dan efisien</span> untuk
-                berbagai industri.
-              </p>
-              <ul className='space-y-4'>
-                <li className='flex items-start gap-3'>
-                  <div>
-                    <IconCertificate className='text-secondary' size={28} />
-                  </div>
-                  <span className='text-gray-800'>
-                    <span className='font-semibold text-primary'>
-                      Profesional & Berpengalaman
-                    </span>{' '}
-                    di bidang pabrikasi, reparasi, dan pengadaan spare parts
-                    alat berat.
-                  </span>
-                </li>
-                <li className='flex items-start gap-3'>
-                  <div>
-                    <IconTools className='text-secondary' size={28} />
-                  </div>
-                  <span className='text-gray-800'>
-                    <span className='font-semibold text-primary'>
-                      Layanan Berkualitas
-                    </span>{' '}
-                    dengan teknisi ahli dan produk teruji.
-                  </span>
-                </li>
-                <li className='flex items-start gap-3'>
-                  <div>
-                    <IconGlobe className='text-secondary' size={28} />
-                  </div>
-                  <span className='text-gray-800'>
-                    <span className='font-semibold text-primary'>
-                      Jangkauan Luas
-                    </span>{' '}
-                    dan kemitraan strategis di seluruh Indonesia.
-                  </span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -247,8 +254,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-        <div className='bg-primary rounded-lg p-8 py-12 flex flex-col items-center text-center'>
+      <section>
+        <div className='p-8 py-12 flex flex-col items-center text-center bg-[url("/img/img2.webp")] bg-cover bg-center backdrop:brightness-50'>
           <h3 className='text-3xl font-bold text-white mb-4'>
             Siap Bermitra dengan Kami?
           </h3>
