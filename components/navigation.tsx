@@ -28,7 +28,7 @@ export default function NavigationBar() {
     { name: 'Pabrikasi', href: '/pabrikasi' },
     { name: 'Reparasi', href: '/reparasi' },
     { name: 'Spare Parts', href: '/sparepart' },
-    { name: 'Tentang Kami', href: '/tentang-kami'},
+    { name: 'Tentang Kami', href: '/tentang-kami' },
     { name: 'Kontak', href: '/kontak' },
   ];
 

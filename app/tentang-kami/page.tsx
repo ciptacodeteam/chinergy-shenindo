@@ -1,4 +1,5 @@
 import SectionTitle from '@/components/titles/SectionTitle';
+import { cn } from '@/lib/utils';
 import {
   IconCertificate,
   IconGlobe,
@@ -173,22 +174,24 @@ const AboutPage = () => {
                   className='flex flex-col md:flex-row items-center justify-between md:even:flex-row-reverse'
                 >
                   <div
-                    className={`md:w-1/2 p-4 flex justify-center ${
+                    className={cn(
+                      `md:w-1/2 p-4 flex justify-center`,
                       milestone.align === 'right'
                         ? 'md:justify-end md:odd:justify-start'
                         : 'md:justify-start md:odd:justify-end'
-                    }`}
+                    )}
                   >
                     <div className='w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white font-bold text-xl'>
                       {idx + 1}
                     </div>
                   </div>
                   <div
-                    className={`md:w-1/2 p-4 text-center ${
+                    className={cn(
+                      `md:w-1/2 p-4 text-center`,
                       milestone.align === 'left'
                         ? 'md:text-left'
                         : 'md:text-right'
-                    }`}
+                    )}
                   >
                     <h4 className='text-2xl font-bold text-primary mb-2'>
                       {milestone.year} - {milestone.title}

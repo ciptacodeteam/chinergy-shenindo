@@ -25,7 +25,7 @@ export function getEmailMessageUrl(
   email: string,
   subject: string,
   body?: string
-) {
+): string {
   let mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
   if (body) {
     mailtoUrl += `&body=${encodeURIComponent(body)}`;
