@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { EMAIL, PHONE_NUMBER } from '@/lib/constants';
 import { cn, getEmailMessageUrl, getWhatsappMessageUrl } from '@/lib/utils';
@@ -32,9 +32,29 @@ export default function NavigationBar() {
     { name: 'Kontak', href: '/kontak' },
   ];
 
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isTop, setIsTop] = useState(true);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      if (currentScrollPos > prevScrollPos && prevScrollPos > 400) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      setPrevScrollPos(currentScrollPos);
+      setIsTop(currentScrollPos === 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
+
   return (
     <>
-      <section>
+      <header>
         <div className='bg-primary'>
           <div className='max-w-7xl mx-auto py-3'>
             <div className='flex justify-between items-center px-4'>
@@ -109,56 +129,69 @@ export default function NavigationBar() {
           </div>
         </div>
 
-        <div className='flex bg-third mx-auto justify-between'>
-          <div className='flex items-center ml-4 lg:ml-0 lg:justify-center w-full lg:max-w-1/4'>
-            <Link
-              href={'/'}
-              className='font-bold py-4 flex justify-center items-center'
-              prefetch
-            >
-              <Image src={logo} alt='logo' className='w-15 me-4' priority />
-              <div className='text-xl leading-6'>
-                <p className='text-primary'>CHINERGI</p>
-                <p className='text-primary'>SHENINDO</p>
-              </div>
-            </Link>
-          </div>
+        <header
+          className={cn(
+            'w-full shadow-md fixed top-0 z-30 transition-transform',
+            visible
+              ? isTop
+                ? 'translate-y-11 bg-transparent !duration-500'
+                : 'translate-y-0 bg-white'
+              : '-translate-y-full'
+          )}
+        >
+          <div className='flex bg-third mx-auto justify-between '>
+            <div className='flex items-center ml-4 lg:ml-0 lg:justify-center w-full lg:max-w-1/4'>
+              <Link
+                href={'/'}
+                className='font-bold py-4 flex justify-center items-center'
+                prefetch
+              >
+                <Image src={logo} alt='logo' className='w-15 me-4' priority />
+                <div className='text-xl leading-6'>
+                  <p className='text-primary'>CHINERGI</p>
+                  <p className='text-primary'>SHENINDO</p>
+                </div>
+              </Link>
+            </div>
 
-          <nav className='hidden lg:flex lg:flex-1 bg-white'>
-            <ul className='grid grid-cols-6 w-full border-gray-200 divide-x border-y h-full text-center font-medium'>
-              {menus.map((menu, idx) => (
-                <li
-                  key={idx}
-                  className='relative z-10 border-gray-200 flex items-center justify-center group'
-                >
-                  <Link
-                    href={menu.href}
-                    className={cn(
-                      'flex items-center justify-center transition-colors duration-300 ',
-                      pathname === menu.href ? 'text-secondary' : 'text-primary'
-                    )}
+            <nav className='hidden lg:flex lg:flex-1 bg-white'>
+              <ul className='grid grid-cols-6 w-full border-gray-200 divide-x border-y h-full text-center font-medium'>
+                {menus.map((menu, idx) => (
+                  <li
+                    key={idx}
+                    className='relative z-10 border-gray-200 flex items-center justify-center group'
                   >
-                    {menu.name}
-                  </Link>
+                    <Link
+                      href={menu.href}
+                      className={cn(
+                        'flex items-center justify-center transition-colors duration-300 ',
+                        pathname === menu.href
+                          ? 'text-secondary'
+                          : 'text-primary'
+                      )}
+                    >
+                      {menu.name}
+                    </Link>
 
-                  <span className='z-0 absolute inset-0 opacity-0 group-hover:opacity-50 transition-opacity duration-300 stripes-bg pointer-events-none' />
-                </li>
-              ))}
-            </ul>
-          </nav>
+                    <span className='z-0 absolute inset-0 opacity-0 group-hover:opacity-50 transition-opacity duration-300 stripes-bg pointer-events-none' />
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          <div
-            className='group bg-secondary flex items-center justify-center cursor-pointer px-7 py-5'
-            onClick={() => setIsOpen(true)}
-          >
-            <div className='space-y-1 w-5'>
-              <span className='block rounded-full h-0.5 w-3 bg-white transition-all duration-300 group-hover:w-5'></span>
-              <span className='block rounded-full h-0.5 bg-white transition-all duration-300 group-hover:w-5'></span>
-              <span className='block rounded-full h-0.5 w-3 bg-white ml-auto transition-all duration-300 group-hover:w-5'></span>
+            <div
+              className='group bg-secondary flex items-center justify-center cursor-pointer px-7 py-5'
+              onClick={() => setIsOpen(true)}
+            >
+              <div className='space-y-1 w-5'>
+                <span className='block rounded-full h-0.5 w-3 bg-white transition-all duration-300 group-hover:w-5'></span>
+                <span className='block rounded-full h-0.5 bg-white transition-all duration-300 group-hover:w-5'></span>
+                <span className='block rounded-full h-0.5 w-3 bg-white ml-auto transition-all duration-300 group-hover:w-5'></span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </header>
+      </header>
 
       {/* SIDEBAR */}
       <div
