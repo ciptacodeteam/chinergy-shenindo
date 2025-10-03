@@ -1,5 +1,7 @@
 'use client';
 
+import { PHONE_NUMBER } from '@/lib/constants';
+import { sendWhatsappMessage } from '@/lib/utils';
 import {
   Description,
   Dialog,
@@ -80,6 +82,19 @@ const FabricationProductListSection = () => {
     }
     return 0;
   });
+
+  const handleQuotation = (product: Product) => {
+    // send all to whatsapp with text
+    // Helper to format budget range
+    const whatsappMessage =
+      `Permintaan penawaran untuk produk:\n\n` +
+      `Nama Produk: ${product.name}\n` +
+      `Kategori: ${product.category}\n` +
+      `Deskripsi: ${product.description}\n\n` +
+      `Silakan hubungi saya untuk informasi lebih lanjut. Terima kasih!`;
+
+    sendWhatsappMessage(PHONE_NUMBER, whatsappMessage);
+  };
 
   return (
     <section className='py-16'>
@@ -164,12 +179,13 @@ const FabricationProductListSection = () => {
             sortedProducts.map((item) => (
               <div
                 key={item.name}
-                className='group relative bg-white border border-gray-200 rounded-xl shadow-md p-5 flex flex-col hover:shadow-lg transition-shadow cursor-pointer'
+                className='group relative bg-white border border-gray-200 rounded-md flex flex-col hover:shadow-lg transition-shadow cursor-pointer overflow-hidden'
+                onClick={() => setSelectedProduct(item)}
               >
                 {/* Top accent bar */}
                 <div className='absolute top-0 left-0 w-full h-2 bg-primary rounded-t-xl' />
                 {/* Product Image */}
-                <div className='relative h-52 mb-4 rounded-lg overflow-hidden flex items-center justify-center bg-gray-50'>
+                <div className='relative h-52 mb-4 overflow-hidden flex items-center justify-center bg-gray-50'>
                   <Image
                     src={item.imageUrl}
                     alt={item.name}
@@ -178,30 +194,32 @@ const FabricationProductListSection = () => {
                     className='object-cover w-full h-full'
                   />
                   {/* Category badge */}
-                  <span className='absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded shadow capitalize'>
+                  <span className='absolute top-4 right-4 bg-primary text-white text-xs px-2 py-1 rounded shadow capitalize'>
                     {item.category}
                   </span>
                 </div>
-                <h3 className='font-semibold text-lg mb-1 text-gray-800 truncate'>
-                  {item.name}
-                </h3>
-                <p className='text-gray-600 text-sm mb-3 line-clamp-2'>
-                  {item.description}
-                </p>
-                <div className='flex items-center gap-2 mb-4'>
-                  <span className='inline-block w-2 h-2 bg-secondary rounded-full' />
-                  <span className='text-xs text-gray-500 uppercase font-medium'>
-                    {item.category}
-                  </span>
+                <div className='px-4 pb-4 flex flex-col flex-grow'>
+                  <h3 className='font-semibold text-lg mb-1 text-gray-800 truncate'>
+                    {item.name}
+                  </h3>
+                  <p className='text-gray-600 text-sm mb-3 line-clamp-2'>
+                    {item.description}
+                  </p>
+                  <div className='flex items-center gap-2 mb-4'>
+                    <span className='inline-block w-2 h-2 bg-secondary rounded-full' />
+                    <span className='text-xs text-gray-500 uppercase font-medium'>
+                      {item.category}
+                    </span>
+                  </div>
+                  <button
+                    className='mt-3 bg-primary text-white rounded-md px-4 py-2 font-medium hover:bg-primary-hover transition text-sm flex items-center justify-center'
+                    type='button'
+                    onClick={() => setSelectedProduct(item)}
+                  >
+                    <IconMenu3 className='inline mr-2' size={16} />
+                    Lihat Detail
+                  </button>
                 </div>
-                <button
-                  className='mt-4 bg-primary text-white rounded-md px-4 py-2 font-medium hover:bg-primary-hover transition text-sm flex items-center justify-center'
-                  type='button'
-                  onClick={() => setSelectedProduct(item)}
-                >
-                  <IconMenu3 className='inline mr-2' size={16} />
-                  Lihat Detail
-                </button>
               </div>
             ))
           ) : (
@@ -306,7 +324,7 @@ const FabricationProductListSection = () => {
                   </button>
                   <button
                     className='px-4 py-2 rounded-md bg-primary text-white font-medium hover:bg-primary-dark transition text-sm flex items-center'
-                    onClick={() => setSelectedProduct(null)}
+                    onClick={() => handleQuotation(selectedProduct)}
                   >
                     <IconBrandWhatsapp className='inline mr-2' size={16} />
                     Ajukan Penawaran
