@@ -4,7 +4,7 @@ import Link from 'next/link';
 const CTASection = () => {
   return (
     <section className='mt-8'>
-      <div className='p-8 py-12 flex flex-col items-center text-center relative before:bg-[url("/img/img3.webp")] before:bg-cover before:bg-center before:contents-[""] before:absolute before:inset-0 before:brightness-[40%] before:-z-10'>
+      <div className='max-w-7xl mx-auto rounded-xl overflow-hidden p-8 py-12 flex flex-col items-center text-center relative before:bg-[url("/img/img3.webp")] before:bg-cover before:bg-center before:contents-[""] before:absolute before:inset-0 before:brightness-[40%] before:-z-10'>
         <h3 className='text-3xl font-bold text-white mb-4'>
           Siap Bermitra dengan Kami?
         </h3>
