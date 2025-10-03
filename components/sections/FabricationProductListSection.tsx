@@ -1,7 +1,7 @@
 'use client';
 
 import { PHONE_NUMBER } from '@/lib/constants';
-import { sendWhatsappMessage } from '@/lib/utils';
+import { getRandomImage, sendWhatsappMessage } from '@/lib/utils';
 import {
   Description,
   Dialog,
@@ -19,38 +19,27 @@ type Product = {
   imageUrl: string;
 };
 
-const getRandomFabricationImage = () => {
-  const images = [
-    'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
-    'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
-    'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80',
-    'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
-    'https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=400&q=80',
-  ];
-  return images[Math.floor(Math.random() * images.length)];
-};
-
 const productList: Product[] = [
   {
     name: 'Produk 1',
     description:
       'Deskripsi singkat produk pabrikasi 1. Kualitas tinggi dan dapat disesuaikan.',
     category: 'logam',
-    imageUrl: getRandomFabricationImage(),
+    imageUrl: getRandomImage(),
   },
   {
     name: 'Produk 2',
     description:
       'Deskripsi singkat produk pabrikasi 2. Kualitas tinggi dan dapat disesuaikan.',
     category: 'plastik',
-    imageUrl: getRandomFabricationImage(),
+    imageUrl: getRandomImage(),
   },
   {
     name: 'Produk 3',
     description:
       'Deskripsi singkat produk pabrikasi 3. Kualitas tinggi dan dapat disesuaikan.',
     category: 'elektronik',
-    imageUrl: getRandomFabricationImage(),
+    imageUrl: getRandomImage(),
   },
 ];
 
