@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function HeroSection() {
   return (
     <section>
-      <div className='relative h-[693px]'>
+      <div className='relative h-[800px]'>
         {/* Video background */}
         <video
           className='absolute inset-0 w-full h-full object-cover bg-center'
