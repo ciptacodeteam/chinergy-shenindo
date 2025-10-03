@@ -10,7 +10,7 @@ import { getEmailMessageUrl, getWhatsappMessageUrl } from '@/lib/utils';
 export default function FooterSection() {
   return (
     <>
-      <footer className='relative bg-primary overflow-hidden'>
+      <footer className='relative bg-primary overflow-hidden mt-8'>
         {/* background image transparan */}
         <div className="absolute inset-0 bg-[url('/img/map_img.webp')] bg-cover bg-no-repeat opacity-15"></div>
 
