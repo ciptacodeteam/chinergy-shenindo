@@ -1,4 +1,7 @@
+'use client';
+
 import CTASection from '@/components/sections/CTASection';
+import FabricationProductListSection from '@/components/sections/FabricationProductListSection';
 import SectionTitle from '@/components/titles/SectionTitle';
 
 const FabricationPage = () => {
@@ -12,12 +15,7 @@ const FabricationPage = () => {
       </header>
 
       {/* Add more sections as needed like Product List with filter */}
-      <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16'>
-        <h2 className='text-2xl font-extrabold text-primary mb-6'>
-          Daftar Produk
-        </h2>
-        {/* Product filter and list components go here */}
-      </section>
+      <FabricationProductListSection />
 
       <CTASection
         title='Ingin Mendiskusikan Proyek Pabrikasi Anda?'
