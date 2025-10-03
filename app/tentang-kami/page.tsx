@@ -31,16 +31,18 @@ const companyBenefits = [
 const AboutPage = () => {
   return (
     <main>
-      <SectionTitle
-        title='Tentang Kami'
-        description='Kami adalah tim yang berdedikasi untuk menyediakan informasi dan layanan terbaik bagi Anda.'
-      />
+      <header className='!bg-primary pt-20'>
+        <SectionTitle
+          title='Tentang Kami'
+          description='Kami adalah tim yang berdedikasi untuk menyediakan informasi dan layanan terbaik bagi Anda.'
+        />
+      </header>
 
       <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16'>
         {/* Who We Are Section */}
-        <div className='grid md:grid-cols-2 gap-16 items-center mb-20'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20'>
           {/* Text Section */}
-          <div className='flex flex-col justify-center h-full'>
+          <div className='flex flex-col justify-center h-full order-2 md:order-none'>
             <div className='space-y-5 '>
               <header>
                 <h2 className='text-2xl font-extrabold font-popins text-primary text-balance'>
@@ -84,16 +86,18 @@ const AboutPage = () => {
             </div>
           </div>
           {/* Image Section */}
-          <div className='relative w-full h-full overflow-hidden group'>
-            <Image
-              src='/img/img1.webp'
-              alt='Heavy equipment repair'
-              fill
-              className='object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-50'
-              priority
-            />
+          <div className='relative overflow-hidden group order-1 md:order-none'>
+            <div className='max-w-full h-96 relative'>
+              <Image
+                src='/img/img1.webp'
+                alt='Heavy equipment repair'
+                fill
+                className='object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-50'
+                priority
+              />
+            </div>
             <div className='absolute inset-0 bg-primary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-              <span className='text-white text-3xl font-bold tracking-wide text-center px-6 drop-shadow-lg'>
+              <span className='text-white text-2xl lg:text-3xl font-bold tracking-wide text-center px-6 drop-shadow-lg'>
                 Keahlian Kami
               </span>
             </div>

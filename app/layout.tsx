@@ -18,7 +18,8 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'CV. Chinergy Shenindo – Jasa Pabrikasi, Reparasi & Spare Parts Medan',
-  description: 'CV. Chinergy Shenindo adalah perusahaan yang berdiri sejak tahun 2021 di Medan, Sumatera Utara. Kami berfokus pada layanan pabrikasi, reparasi, serta pengadaan spare parts untuk mendukung kebutuhan industri. Dengan pengalaman dan komitmen yang terus berkembang, kami hadir sebagai mitra terpercaya bagi berbagai perusahaan di Indonesia.',
+  description:
+    'CV. Chinergy Shenindo adalah perusahaan yang berdiri sejak tahun 2021 di Medan, Sumatera Utara. Kami berfokus pada layanan pabrikasi, reparasi, serta pengadaan spare parts untuk mendukung kebutuhan industri. Dengan pengalaman dan komitmen yang terus berkembang, kami hadir sebagai mitra terpercaya bagi berbagai perusahaan di Indonesia.',
 };
 
 export default function RootLayout({
@@ -30,7 +31,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${poppins.variable} ${roboto.variable} antialiased`}>
         <NavigationBar />
-        {children}
+        <main className='min-h-[calc(100vh-theme(spacing.24)-theme(spacing.32))]'>
+          {children}
+        </main>
         <WhatsAppButton />
         <FooterSection />
       </body>

@@ -1,14 +1,21 @@
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 type Props = {
   title: string;
   description: string;
   img?: string;
+  className?: string;
 };
 
-const SectionTitle = ({ title, description, img }: Props) => {
+const SectionTitle = ({ title, description, img, className }: Props) => {
   return (
-    <section className='relative h-[200px] lg:h-[300px] w-full flex items-center justify-center bg-primary overflow-hidden'>
+    <section
+      className={cn(
+        'relative min-h-[200px] lg:min-h-[300px] w-full flex items-center justify-center bg-primary overflow-hidden',
+        className
+      )}
+    >
       <Image
         src={img || '/img/map_img.webp'}
         alt='World Map'
