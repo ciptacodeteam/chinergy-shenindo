@@ -1,6 +1,7 @@
 import ContactForm from '@/components/forms/ContactForm';
 import ContactDetailCard from '@/components/sections/ContactDetailCard';
 import SectionTitle from '@/components/titles/SectionTitle';
+import { getRandomImage } from '@/lib/utils';
 import { Button } from '@headlessui/react';
 import {
   IconBox,
@@ -42,17 +43,17 @@ const categories = [
   {
     title: 'Alat Berat',
     description: 'Spare parts untuk berbagai jenis alat berat.',
-    imageUrl: '/images/categories/heavy-equipment.jpg',
+    imageUrl: getRandomImage(),
   },
   {
     title: 'Otomotif',
     description: 'Spare parts untuk kendaraan seperti mobil atau truck.',
-    imageUrl: '/images/categories/automotive.jpg',
+    imageUrl: getRandomImage(),
   },
   {
     title: 'Spare Parts Lainnya',
     description: 'Berbagai spare parts untuk kebutuhan industri lainnya.',
-    imageUrl: '/images/categories/others.jpg',
+    imageUrl: getRandomImage(),
   },
 ];
 
@@ -105,7 +106,7 @@ const SparePartPage = () => {
                   alt={category.title}
                   width={500}
                   height={300}
-                  className='w-full h-48 object-cover'
+                  className='w-full h-72 object-cover'
                 />
                 <div className='p-6'>
                   <h3 className='text-xl font-semibold mb-2'>
